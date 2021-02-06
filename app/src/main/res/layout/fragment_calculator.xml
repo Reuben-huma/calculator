@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CalculatorFragment">
+
+    <data>
+
+        <variable
+            name="calculatorFragment"
+            type="eu.tutorials.calculator.CalculatorFragment" />
+
+        <variable
+            name="calculatorViewModel"
+            type="eu.tutorials.calculator.model.CalculatorViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="bottom|end"
+            android:padding="8dp"
+            android:text="@{calculatorViewModel.value.toString()}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="100" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView">
+
+            <LinearLayout
+                android:id="@+id/linear_layout_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/linear_layout_2">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_7"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_7)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_4)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_1)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_comma"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_comma)}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/linear_layout_1"
+                app:layout_constraintEnd_toStartOf="@id/linear_layout_3">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_8"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_8)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_5)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_2)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_0"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_0)}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/linear_layout_2"
+                app:layout_constraintEnd_toStartOf="@id/linear_layout_4">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_9"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_9)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_6)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_3)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_equals"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_equals)}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/linear_layout_3"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_del"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_del)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_divide"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_divide)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_multiply"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_multiply)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_minus"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_minus)}" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/_add"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:onClick="@{() -> calculatorFragment.onButtonClick(@string/_add)}" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
